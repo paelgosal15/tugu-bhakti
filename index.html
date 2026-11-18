@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Sekolah Kristen Tugu Bhakti</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;700&family=Young+Serif&display=swap">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css">
 <style>
 :root{--bg:#f4f6fb;--surf:#fff;--ink:#14213d;--mut:#55607a;--pri:#274690;--btn:#274690;--btnt:#fff;--sun:#f0b429;--line:#d9dfee;--soft:#e8edf8;--hero:#14213d;--herot:#f4f6fb;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -18,7 +17,6 @@ h1,h2,h3{font-family:"Young Serif",Georgia,serif;font-weight:400;line-height:1.2
 h1{font-size:clamp(2.2rem,6vw,3.8rem)}h2{font-size:1.7rem}h3{font-size:1.2rem}
 p{margin:0 0 1em;max-width:68ch}
 a{color:var(--pri)}
-:root{--chat--color-primary:#274690;--chat--toggle--background:#274690;--chat--color-secondary:#f0b429;--chat--window--z-index:1000;--chat--toggle--z-index:1000}
 :focus-visible{outline:3px solid var(--sun);outline-offset:2px}
 header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--surf);border-bottom:1px solid var(--line)}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--surf);z-index:30}
@@ -74,42 +72,26 @@ footer .wrap{padding:30px 20px;font-size:.95rem}footer a{color:inherit;margin-ri
 <nav id="nv" aria-label="Menu utama"><ul id="nl"></ul></nav>
 </div></header>
 <main id="m"></main>
-<footer><div class="wrap"><div id="fl"></div><p>© 2026 Yayasan Pendidikan Kristen Tugu Bhakti. Data pada situs ini adalah data dummy.</p></div></footer>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<footer><div class="wrap"><div id="fl"></div><p>© 2026 Yayasan Pendidikan Kristen Tugu Bhakti. Data pada situs ini masih contoh dan perlu diganti dengan data resmi sekolah.</p></div></footer>
 <script>
-// ====== KONFIGURASI: isi 3 nilai ini ======
-const SUPABASE_URL="PASTE_SUPABASE_URL";            // contoh: https://xxxx.supabase.co
-const SUPABASE_ANON_KEY="PASTE_SUPABASE_ANON_KEY";  // publishable / anon key (BUKAN service role)
-const N8N_CHAT_URL="PASTE_N8N_CHAT_PRODUCTION_URL"; // Production URL node "When chat message received"
-// ===========================================
-let D=null,KONTEKS="";
-const sb=window.supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);
-async function loadD(){
- const names=["sekolah_profil","sejarah","visi_misi","struktur","fasilitas","program","kegiatan","prestasi","ppdb_info","galeri","faq"];
- const res=await Promise.all(names.map(n=>sb.from(n).select("*").order("urutan",{ascending:true}).order("id",{ascending:true})));
- const bad=res.find(r=>r.error);if(bad)throw bad.error;
- const T={};names.forEach((n,i)=>T[n]=res[i].data||[]);
- const p=T.sekolah_profil[0]||{},pp=k=>T.ppdb_info.filter(x=>x.kategori===k).map(x=>x.isi),lv=n=>(T.struktur.find(x=>x.level===n)||{}).nama||"-";
- D={nama:p.nama||"Sekolah",yayasan:p.yayasan||"",alamat:p.alamat||"-",telp:p.telp||"-",email:p.email||"-",jam:p.jam_layanan||"-",sambutan:p.sambutan||"",kepsek:p.kepala_sekolah||"-",
-  sejarah:T.sejarah.map(x=>[x.tahun,x.uraian]),
-  visi:(T.visi_misi.find(x=>x.jenis==="visi")||{}).isi||"",misi:T.visi_misi.filter(x=>x.jenis==="misi").map(x=>x.isi),
-  struktur:{ketua:lv(1),kepsek:lv(2),wakil:T.struktur.filter(x=>x.level===3).map(x=>[x.jabatan,x.nama])},
-  fasilitas:T.fasilitas.map(x=>[x.nama,x.deskripsi]),program:T.program.map(x=>[x.nama,x.deskripsi]),
-  kegiatan:T.kegiatan.map(x=>[x.judul,x.deskripsi,x.waktu]),prestasi:T.prestasi.map(x=>[x.tahun,x.judul,x.keterangan]),
-  ppdb:{syarat:pp("syarat"),alur:pp("alur"),jadwal:pp("jadwal"),biaya:pp("biaya"),info:pp("info").join(" ")},
-  galeri:T.galeri.map(x=>[x.judul,x.warna1||"#274690",x.warna2||"#14213d"])};
- // Ringkasan seluruh data (dari Supabase) yang dikirim ke asisten AI di n8n
- const skip=["id","urutan","warna1","warna2"];
- const row=r=>"- "+Object.entries(r).filter(([k,v])=>!skip.includes(k)&&v!=null&&v!=="").map(([k,v])=>k+": "+v).join("; ");
- KONTEKS=[["PROFIL SEKOLAH","sekolah_profil"],["SEJARAH","sejarah"],["VISI DAN MISI","visi_misi"],["STRUKTUR ORGANISASI","struktur"],["FASILITAS","fasilitas"],["PROGRAM PENDIDIKAN","program"],["KEGIATAN","kegiatan"],["PRESTASI","prestasi"],["PENERIMAAN PESERTA DIDIK BARU","ppdb_info"],["PERTANYAAN UMUM (FAQ)","faq"]].map(([t,n])=>t+"\n"+T[n].map(row).join("\n")).join("\n\n");
-}
-async function startChat(){
- if(N8N_CHAT_URL.startsWith("PASTE_"))return console.warn("N8N_CHAT_URL belum diisi");
- const {createChat}=await import("https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js");
- createChat({webhookUrl:N8N_CHAT_URL,webhookConfig:{method:"POST",headers:{"ngrok-skip-browser-warning":"true"}},mode:"window",showWelcomeScreen:false,loadPreviousSession:false,metadata:{context:KONTEKS},
-  initialMessages:["Halo, Bapak/Ibu! Saya asisten Sekolah Kristen Tugu Bhakti.","Tanyakan apa saja, misalnya biaya, jadwal pendaftaran, fasilitas, atau kegiatan sekolah."],
-  i18n:{en:{title:"Asisten Tugu Bhakti",subtitle:"Tanya seputar sekolah",footer:"",getStarted:"Mulai",inputPlaceholder:"Tulis pertanyaan Anda..."}}});
-}
+// ====== DATA SEKOLAH — ganti isi di bawah ini dengan data resmi ======
+const D={
+ nama:"Sekolah Kristen Tugu Bhakti",yayasan:"Yayasan Pendidikan Kristen Tugu Bhakti",
+ alamat:"Jl. Tugu Raya No. 12, Koja, Jakarta Utara 14260",telp:"(021) 555-0123",email:"info@tugubhakti.sch.id",jam:"Senin–Jumat, 07.00–15.00",
+ sambutan:"Selamat datang di situs Sekolah Kristen Tugu Bhakti. Kami ingin Bapak/Ibu mengenal sekolah kami lebih dulu, mulai dari sejarah, visi dan misi, fasilitas, sampai kegiatan sehari-hari anak-anak, sebelum memutuskan datang langsung. Kami percaya pendidikan yang baik tumbuh dari kasih, disiplin, dan kerja sama antara sekolah dan keluarga.",
+ kepsek:"Ibu Margaretha Simanjuntak, S.Pd.",
+ sejarah:[["1985","Yayasan Pendidikan Kristen Tugu Bhakti berdiri dengan tujuan menyediakan pendidikan yang berlandaskan iman Kristen bagi anak-anak di lingkungan sekitar."],["1987","Sekolah mulai menerima peserta didik angkatan pertama dengan dua ruang kelas."],["2005","Sekolah membangun gedung baru yang memuat perpustakaan dan ruang ibadah."],["2015","Sekolah membuka laboratorium komputer dan memperbarui lapangan olahraga."],["Sekarang","Sekolah terus mengembangkan program pembelajaran dan kegiatan peserta didik."]],
+ visi:"Menjadi sekolah yang membentuk peserta didik beriman, berkarakter, cerdas, dan melayani sesama.",
+ misi:["Menanamkan nilai iman Kristen dalam kehidupan sekolah sehari-hari.","Menyelenggarakan pembelajaran yang bermutu dan sesuai kebutuhan peserta didik.","Membangun karakter jujur, disiplin, dan bertanggung jawab.","Mengembangkan minat dan bakat melalui kegiatan di luar kelas.","Bekerja sama dengan orang tua dan masyarakat."],
+ struktur:{ketua:"Bapak Daniel Hutapea, M.Th.",kepsek:"Ibu Margaretha Simanjuntak, S.Pd.",wakil:[["Wakil Kepala Sekolah Bidang Kurikulum","Bapak Yohanes Sitorus, S.Pd."],["Wakil Kepala Sekolah Bidang Kesiswaan","Ibu Ruth Manurung, S.Pd."],["Kepala Tata Usaha","Ibu Esther Tampubolon, S.E."]]},
+ fasilitas:[["Ruang kelas","Ruang belajar yang tertata untuk kegiatan belajar mengajar."],["Perpustakaan","Koleksi buku bacaan dan buku pelajaran untuk peserta didik dan guru."],["Laboratorium komputer","Tempat belajar teknologi informasi."],["Ruang ibadah","Tempat kebaktian dan kegiatan rohani sekolah."],["Lapangan olahraga","Area untuk pelajaran olahraga dan upacara."],["Unit kesehatan sekolah","Pertolongan pertama bagi peserta didik yang kurang sehat."]],
+ program:[["Pembelajaran kelas","Kurikulum yang berlaku, disampaikan oleh guru dengan metode yang disesuaikan jenjang."],["Pendidikan agama Kristen","Pelajaran agama, ibadah bersama, dan pembinaan rohani."],["Pembentukan karakter","Pembiasaan disiplin, kejujuran, dan kepedulian di lingkungan sekolah."],["Ekstrakurikuler","Pilihan kegiatan sesuai minat, misalnya musik, olahraga, dan pramuka."]],
+ kegiatan:[["Ibadah pembukaan tahun ajaran","Seluruh warga sekolah berdoa bersama untuk memulai tahun ajaran baru.","Juli 2026"],["Perayaan Natal sekolah","Pentas drama dan paduan suara peserta didik bersama orang tua.","Desember 2026"],["Pekan olahraga sekolah","Lomba antarkelas untuk melatih sportivitas.","Oktober 2026"],["Kunjungan belajar","Peserta didik belajar langsung di luar sekolah.","September 2026"],["Pertemuan orang tua dan guru","Penyampaian perkembangan belajar dan diskusi dengan wali kelas.","Agustus 2026"],["Retret rohani kelas 6","Dua hari kegiatan renungan dan kebersamaan sebelum ujian akhir.","November 2026"],["Bakti sosial","Peserta didik dan guru membagikan paket sembako kepada warga sekitar.","Mei 2026"]],
+ prestasi:[["2026","Juara 1 Lomba Paduan Suara Antarsekolah Kristen","Tingkat kota, diraih tim paduan suara kelas 4–6"],["2026","Juara 2 Olimpiade Matematika","Tingkat kecamatan, diraih Samuel Pangaribuan (kelas 6)"],["2025","Juara 3 Lomba Menggambar","Tingkat kota, diraih Grace Nainggolan (kelas 3)"],["2025","Juara 1 Futsal Antarsekolah","Tingkat kecamatan, tim putra kelas 5–6"],["2024","Juara Harapan 1 Lomba Pidato Bahasa Inggris","Tingkat kota, diraih Jonathan Silalahi (kelas 6)"]],
+ ppdb:{syarat:["Mengisi formulir pendaftaran di sekolah","Fotokopi akta kelahiran dan kartu keluarga","Pas foto terbaru","Rapor atau surat keterangan dari sekolah asal (jika ada)"],alur:["Hubungi sekolah atau datang langsung untuk mendapat informasi","Lengkapi berkas pendaftaran di sekolah","Ikuti tes atau wawancara sesuai jadwal","Terima pengumuman dan lakukan daftar ulang"],jadwal:"Gelombang 1: 1 Desember 2026 – 28 Februari 2027. Gelombang 2: 1 Maret – 31 Mei 2027. Tahun ajaran baru dimulai Juli 2027.",biaya:"Uang pangkal Rp5.000.000 dan uang sekolah Rp750.000 per bulan (angka contoh). Hubungi tata usaha untuk rincian dan keringanan."},
+ galeri:[["Ibadah pagi","#274690","#14213d"],["Kelas","#2f7d5b","#14213d"],["Perpustakaan","#a14a76","#274690"],["Olahraga","#d9782d","#8a2f2f"],["Pentas Natal","#8a2f2f","#274690"],["Upacara","#14213d","#2f7d5b"]]
+};
+// =====================================================================
 const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const ph=(t,s)=>`<div class="ph"><div class="wrap"><h1 style="font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:.2em">${t}</h1><p>${s}</p></div></div>`;
 const pg=(t,s,b)=>ph(t,s)+`<div class="wrap">${b}</div>`;
@@ -125,9 +107,9 @@ fasilitas:{t:"Fasilitas",r:()=>pg("Fasilitas","Sarana dan prasarana sekolah",`<d
 program:{t:"Program Pendidikan",r:()=>pg("Program Pendidikan","Apa yang dipelajari dan dikerjakan peserta didik",`<div class="grid">${D.program.map(x=>`<div class="it"><h3>${esc(x[0])}</h3><p>${esc(x[1])}</p></div>`).join("")}</div>`)},
 kegiatan:{t:"Kegiatan",r:()=>pg("Kegiatan Sekolah","Cari kegiatan berdasarkan judul atau isi",`<label for="q">Cari kegiatan</label><input id="q" type="search" placeholder="Contoh: Natal"><div id="kl"></div>`),b:()=>{const f=()=>{const q=$("#q").value.trim().toLowerCase(),a=D.kegiatan.filter(x=>(x[0]+x[1]).toLowerCase().includes(q));$("#kl").innerHTML=a.length?a.map(x=>`<div class="row"><b style="font-size:.95rem">${esc(x[2])}</b><div><h3 style="margin:0 0 .2em">${esc(x[0])}</h3><p>${esc(x[1])}</p></div></div>`).join(""):`<p style="margin-top:16px">Tidak ada kegiatan dengan kata “${esc(q)}”. Coba kata lain.</p>`};$("#q").oninput=f;f()}},
 prestasi:{t:"Prestasi",r:()=>pg("Prestasi","Capaian peserta didik dan sekolah",D.prestasi.map(x=>`<div class="row"><b>${esc(x[0])}</b><div><h3 style="margin:0">${esc(x[1])}</h3><p>${esc(x[2])}</p></div></div>`).join(""))},
-ppdb:{t:"Penerimaan Peserta Didik",r:()=>pg("Penerimaan Peserta Didik Baru","Informasi untuk calon orang tua atau wali murid",`<div class="two"><div><h2>Persyaratan</h2><ol class="m">${D.ppdb.syarat.map(x=>`<li>${esc(x)}</li>`).join("")}</ol><h2>Jadwal</h2><ol class="m" style="list-style:disc">${D.ppdb.jadwal.map(x=>`<li>${esc(x)}</li>`).join("")}</ol><h2>Biaya</h2><ol class="m" style="list-style:disc">${D.ppdb.biaya.map(x=>`<li>${esc(x)}</li>`).join("")}</ol></div><div><h2>Alur pendaftaran</h2><ol class="m">${D.ppdb.alur.map(x=>`<li>${esc(x)}</li>`).join("")}</ol><p style="color:var(--mut)">${esc(D.ppdb.info)}</p><a class="btn" href="#kontak">Tanya ke sekolah</a></div></div>`)},
+ppdb:{t:"Penerimaan Peserta Didik",r:()=>pg("Penerimaan Peserta Didik Baru","Informasi untuk calon orang tua atau wali murid",`<div class="two"><div><h2>Persyaratan</h2><ol class="m">${D.ppdb.syarat.map(x=>`<li>${esc(x)}</li>`).join("")}</ol><h2>Jadwal</h2><p>${esc(D.ppdb.jadwal)}</p><h2>Biaya</h2><p>${esc(D.ppdb.biaya)}</p></div><div><h2>Alur pendaftaran</h2><ol class="m">${D.ppdb.alur.map(x=>`<li>${esc(x)}</li>`).join("")}</ol><p style="color:var(--mut)">Pendaftaran dilakukan langsung di sekolah. Situs ini hanya memberi informasi.</p><a class="btn" href="#kontak">Tanya ke sekolah</a></div></div>`)},
 galeri:{t:"Galeri",r:()=>pg("Galeri","Suasana belajar dan kegiatan di sekolah",`<div class="gal">${D.galeri.map(x=>`<div style="--c1:${x[1]};--c2:${x[2]}" role="img" aria-label="${esc(x[0])}">${esc(x[0])}</div>`).join("")}</div><p style="margin-top:14px;color:var(--mut)">Foto asli sekolah akan menggantikan kotak warna ini.</p>`)},
-kontak:{t:"Kontak",r:()=>pg("Hubungi Kami","Kirim pertanyaan atau datang ke sekolah",`<div class="two"><div><h2>Alamat sekolah</h2><p>${esc(D.nama)}<br>${esc(D.alamat)}</p><p>Telepon: ${esc(D.telp)}<br>Email: ${esc(D.email)}<br>Jam layanan: ${esc(D.jam)}</p></div><div><h2>Kirim pesan</h2><form id="f" novalidate><label for="n">Nama</label><input id="n" autocomplete="name"><div class="err" id="en"></div><label for="e">Email</label><input id="e" type="email" autocomplete="email"><div class="err" id="ee"></div><label for="p">Pesan</label><textarea id="p" rows="4"></textarea><div class="err" id="ep"></div><button class="btn" type="submit">Kirim pesan</button></form><div id="res"></div></div></div>`),b:()=>{$("#f").onsubmit=ev=>{ev.preventDefault();const n=$("#n").value.trim(),e=$("#e").value.trim(),p=$("#p").value.trim();$("#en").textContent=n?"":"Isi nama Anda.";$("#ee").textContent=/^\S+@\S+\.\S+$/.test(e)?"":"Isi email yang valid, misalnya nama@email.com.";$("#ep").textContent=p?"":"Tulis pesan Anda.";if(!n||!/^\S+@\S+\.\S+$/.test(e)||!p)return;const bt=$("#f button");bt.disabled=true;sb.from("pesan_kontak").insert({nama:n,email:e,pesan:p}).then(({error})=>{bt.disabled=false;$("#res").innerHTML=error?`<div class="err" role="alert">Pesan belum terkirim. Coba lagi sebentar lagi atau hubungi sekolah lewat telepon.</div>`:`<div class="ok" role="status">Terima kasih, pesan Anda sudah terkirim. Pihak sekolah akan menghubungi lewat email.</div>`;if(!error)$("#f").reset()})}}}
+kontak:{t:"Kontak",r:()=>pg("Hubungi Kami","Kirim pertanyaan atau datang ke sekolah",`<div class="two"><div><h2>Alamat sekolah</h2><p>${esc(D.nama)}<br>${esc(D.alamat)}</p><p>Telepon: ${esc(D.telp)}<br>Email: ${esc(D.email)}<br>Jam layanan: ${esc(D.jam)}</p></div><div><h2>Kirim pesan</h2><form id="f" novalidate><label for="n">Nama</label><input id="n" autocomplete="name"><div class="err" id="en"></div><label for="e">Email</label><input id="e" type="email" autocomplete="email"><div class="err" id="ee"></div><label for="p">Pesan</label><textarea id="p" rows="4"></textarea><div class="err" id="ep"></div><button class="btn" type="submit">Kirim pesan</button></form><div id="res"></div></div></div>`),b:()=>{$("#f").onsubmit=ev=>{ev.preventDefault();const n=$("#n").value.trim(),e=$("#e").value.trim(),p=$("#p").value.trim();$("#en").textContent=n?"":"Isi nama Anda.";$("#ee").textContent=/^\S+@\S+\.\S+$/.test(e)?"":"Isi email yang valid, misalnya nama@email.com.";$("#ep").textContent=p?"":"Tulis pesan Anda.";if(!n||!/^\S+@\S+\.\S+$/.test(e)||!p)return;$("#res").innerHTML=`<div class="ok" role="status">Pesan siap dikirim. Aplikasi email Anda akan terbuka; tekan kirim di sana untuk menyelesaikan.</div>`;location.href=`mailto:${D.email}?subject=${encodeURIComponent("Pertanyaan dari "+n)}&body=${encodeURIComponent(p+"\n\n"+n+" ("+e+")")}`}}}
 };
 const NAV=[["beranda"],["Tentang",["profil","sejarah","visi","struktur"]],["fasilitas"],["program"],["kegiatan"],["prestasi"],["ppdb"],["galeri"],["kontak"]];
 const lk=k=>`<a href="#${k}" data-k="${k}">${R[k].t}</a>`;
@@ -135,9 +117,7 @@ $("#nl").innerHTML=NAV.map(x=>x[1]?`<li><button class="t" type="button" aria-has
 $("#fl").innerHTML=Object.keys(R).map(lk).join("");
 $("#mb").onclick=()=>{const o=$("#nv").classList.toggle("open");$("#mb").setAttribute("aria-expanded",o)};
 function go(){let k=location.hash.slice(1);if(!R[k])k="beranda";$("#m").innerHTML=R[k].r();if(R[k].b)R[k].b();document.title=(k==="beranda"?"":R[k].t+" · ")+D.nama;document.querySelectorAll("#nl a").forEach(a=>a.classList.toggle("on",a.dataset.k===k));$("#nv").classList.remove("open");$("#mb").setAttribute("aria-expanded","false");scrollTo(0,0)}
-addEventListener("hashchange",()=>D&&go());
-(async()=>{$("#m").innerHTML='<div class="wrap"><p>Memuat data sekolah…</p></div>';
- try{await loadD();go();startChat()}catch(e){console.error(e);$("#m").innerHTML='<div class="wrap"><h2>Data belum bisa dimuat</h2><p>Periksa SUPABASE_URL dan SUPABASE_ANON_KEY di index.html, lalu pastikan file SQL sudah dijalankan di Supabase.</p></div>'}})();
+addEventListener("hashchange",go);go();
 </script>
 </body>
 </html>
