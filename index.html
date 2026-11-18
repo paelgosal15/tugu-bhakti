@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sekolah Kristen Tugu Bhakti</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;700&family=Young+Serif&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css">
+<style>
+:root{--bg:#f4f6fb;--surf:#fff;--ink:#14213d;--mut:#55607a;--pri:#274690;--btn:#274690;--btnt:#fff;--sun:#f0b429;--line:#d9dfee;--soft:#e8edf8;--hero:#14213d;--herot:#f4f6fb;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1427;--surf:#141d36;--ink:#eef1fa;--mut:#a3accb;--pri:#9db8ff;--btn:#f0b429;--btnt:#14213d;--line:#27335a;--soft:#18233f;--hero:#0a1020;--herot:#eef1fa}}
+:root[data-theme="dark"]{--bg:#0d1427;--surf:#141d36;--ink:#eef1fa;--mut:#a3accb;--pri:#9db8ff;--btn:#f0b429;--btnt:#14213d;--line:#27335a;--soft:#18233f;--hero:#0a1020;--herot:#eef1fa}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.7 Figtree,system-ui,sans-serif}
+h1,h2,h3{font-family:"Young Serif",Georgia,serif;font-weight:400;line-height:1.2;margin:0 0 .6em}
+h1{font-size:clamp(2.2rem,6vw,3.8rem)}h2{font-size:1.7rem}h3{font-size:1.2rem}
+p{margin:0 0 1em;max-width:68ch}
+a{color:var(--pri)}
+:root{--chat--color-primary:#274690;--chat--toggle--background:#274690;--chat--color-secondary:#f0b429;--chat--window--z-index:1000;--chat--toggle--z-index:1000}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--surf);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--surf);z-index:30}
+.bar{max-width:1100px;margin:auto;display:flex;align-items:center;gap:12px;padding:10px 20px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font:700 1rem/1.2 Figtree,sans-serif;margin-right:auto}
+.logo svg{width:34px;height:34px}
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:2px}
+nav li{position:relative}
+nav a,nav button.t{display:block;padding:8px 10px;border-radius:8px;text-decoration:none;color:var(--ink);font:500 .92rem Figtree,sans-serif;background:none;border:0;cursor:pointer}
+nav a:hover,nav button.t:hover,nav a.on{background:var(--soft)}
+nav a.on{color:var(--pri);font-weight:700}
+nav ul ul{display:none;position:absolute;top:100%;left:0;min-width:170px;background:var(--surf);border:1px solid var(--line);border-radius:10px;padding:6px;flex-direction:column}
+nav li:hover>ul,nav li:focus-within>ul{display:flex}
+#mb{display:none;background:none;border:1px solid var(--line);border-radius:8px;padding:6px 12px;color:var(--ink);font:inherit;cursor:pointer}
+@media(max-width:900px){#mb{display:block}nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--surf);border-bottom:1px solid var(--line);padding:8px 16px 14px}nav.open{display:block}nav ul{flex-direction:column}nav ul ul{display:flex;position:static;border:0;padding:0 0 0 14px}}
+.hero{background:var(--hero);color:var(--herot)}
+.hero .in{max-width:1100px;margin:auto;padding:56px 20px;display:grid;grid-template-columns:1.3fr 1fr;gap:30px;align-items:center}
+.hero p{color:inherit;opacity:.85;font-size:1.15rem}
+.hero svg{width:100%;max-height:340px}
+@media(max-width:760px){.hero .in{grid-template-columns:1fr}.hero svg{max-height:200px}}
+.btn{display:inline-block;background:var(--btn);color:var(--btnt);padding:12px 22px;border-radius:999px;font-weight:700;text-decoration:none;border:0;cursor:pointer;font-family:inherit;font-size:1rem;margin:0 8px 8px 0}
+.btn.o{background:none;color:inherit;border:2px solid currentColor}
+.wrap{max-width:1100px;margin:auto;padding:44px 20px}
+.ph{background:var(--soft);border-bottom:1px solid var(--line)}.ph .wrap{padding:36px 20px}.ph p{margin:0;color:var(--mut)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:26px}
+.it{border-left:4px solid var(--sun);padding:2px 0 2px 16px}.it p{margin:0;color:var(--mut)}
+.row{display:grid;grid-template-columns:90px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.row b{font-family:"Young Serif",Georgia,serif;color:var(--pri);font-weight:400;font-size:1.1rem}
+.row p{margin:0}.row small{color:var(--mut)}
+ol.m{padding-left:1.2em}ol.m li{margin-bottom:.6em;max-width:68ch}
+.org{display:flex;flex-direction:column;align-items:center;gap:0;text-align:center}
+.org .n{background:var(--surf);border:2px solid var(--pri);border-radius:10px;padding:10px 18px;min-width:210px}
+.org .n small{display:block;color:var(--mut)}
+.org .l{width:2px;height:22px;background:var(--pri)}
+.org .r{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+.gal div{aspect-ratio:4/3;border-radius:10px;display:flex;align-items:flex-end;padding:12px;color:#fff;font-weight:700;background:linear-gradient(150deg,var(--c1),var(--c2))}
+input,textarea{width:100%;font:inherit;padding:11px 13px;border:1px solid var(--line);border-radius:10px;background:var(--surf);color:var(--ink);margin-bottom:6px}
+label{font-weight:700;display:block;margin-top:10px}
+.err{color:#c0392b;font-size:.9rem;min-height:1.2em;margin-bottom:4px}
+@media(prefers-color-scheme:dark){.err{color:#ff8f80}}
+.ok{background:var(--soft);border-left:4px solid var(--pri);padding:12px 16px;border-radius:6px;margin-top:14px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:40px}@media(max-width:760px){.two{grid-template-columns:1fr}}
+footer{background:var(--hero);color:var(--herot);margin-top:30px}
+footer .wrap{padding:30px 20px;font-size:.95rem}footer a{color:inherit;margin-right:14px}footer p{opacity:.8}
+@media(prefers-reduced-motion:no-preference){main{animation:f .25s ease}@keyframes f{from{opacity:.4}to{opacity:1}}}
+</style>
+</head>
+<body>
+<header><div class="bar">
+<a class="logo" href="#beranda"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="#f0b429"/><path d="M20 5l4 7v21h-8V12z" fill="#14213d"/></svg><span>Tugu Bhakti<br><small style="font-weight:400;opacity:.7">Yayasan Pendidikan Kristen</small></span></a>
+<button id="mb" aria-expanded="false" aria-controls="nv">Menu</button>
+<nav id="nv" aria-label="Menu utama"><ul id="nl"></ul></nav>
+</div></header>
+<main id="m"></main>
+<footer><div class="wrap"><div id="fl"></div><p>© 2026 Yayasan Pendidikan Kristen Tugu Bhakti. Data pada situs ini adalah data dummy.</p></div></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+// ====== KONFIGURASI: isi 3 nilai ini ======
+const SUPABASE_URL="PASTE_SUPABASE_URL";            // contoh: https://xxxx.supabase.co
+const SUPABASE_ANON_KEY="PASTE_SUPABASE_ANON_KEY";  // publishable / anon key (BUKAN service role)
+const N8N_CHAT_URL="PASTE_N8N_CHAT_PRODUCTION_URL"; // Production URL node "When chat message received"
+// ===========================================
+let D=null,KONTEKS="";
+const sb=window.supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);
+async function loadD(){
+ const names=["sekolah_profil","sejarah","visi_misi","struktur","fasilitas","program","kegiatan","prestasi","ppdb_info","galeri","faq"];
+ const res=await Promise.all(names.map(n=>sb.from(n).select("*").order("urutan",{ascending:true}).order("id",{ascending:true})));
+ const bad=res.find(r=>r.error);if(bad)throw bad.error;
+ const T={};names.forEach((n,i)=>T[n]=res[i].data||[]);
+ const p=T.sekolah_profil[0]||{},pp=k=>T.ppdb_info.filter(x=>x.kategori===k).map(x=>x.isi),lv=n=>(T.struktur.find(x=>x.level===n)||{}).nama||"-";
+ D={nama:p.nama||"Sekolah",yayasan:p.yayasan||"",alamat:p.alamat||"-",telp:p.telp||"-",email:p.email||"-",jam:p.jam_layanan||"-",sambutan:p.sambutan||"",kepsek:p.kepala_sekolah||"-",
+  sejarah:T.sejarah.map(x=>[x.tahun,x.uraian]),
+  visi:(T.visi_misi.find(x=>x.jenis==="visi")||{}).isi||"",misi:T.visi_misi.filter(x=>x.jenis==="misi").map(x=>x.isi),
+  struktur:{ketua:lv(1),kepsek:lv(2),wakil:T.struktur.filter(x=>x.level===3).map(x=>[x.jabatan,x.nama])},
+  fasilitas:T.fasilitas.map(x=>[x.nama,x.deskripsi]),program:T.program.map(x=>[x.nama,x.deskripsi]),
+  kegiatan:T.kegiatan.map(x=>[x.judul,x.deskripsi,x.waktu]),prestasi:T.prestasi.map(x=>[x.tahun,x.judul,x.keterangan]),
+  ppdb:{syarat:pp("syarat"),alur:pp("alur"),jadwal:pp("jadwal"),biaya:pp("biaya"),info:pp("info").join(" ")},
+  galeri:T.galeri.map(x=>[x.judul,x.warna1||"#274690",x.warna2||"#14213d"])};
+ // Ringkasan seluruh data (dari Supabase) yang dikirim ke asisten AI di n8n
+ const skip=["id","urutan","warna1","warna2"];
+ const row=r=>"- "+Object.entries(r).filter(([k,v])=>!skip.includes(k)&&v!=null&&v!=="").map(([k,v])=>k+": "+v).join("; ");
+ KONTEKS=[["PROFIL SEKOLAH","sekolah_profil"],["SEJARAH","sejarah"],["VISI DAN MISI","visi_misi"],["STRUKTUR ORGANISASI","struktur"],["FASILITAS","fasilitas"],["PROGRAM PENDIDIKAN","program"],["KEGIATAN","kegiatan"],["PRESTASI","prestasi"],["PENERIMAAN PESERTA DIDIK BARU","ppdb_info"],["PERTANYAAN UMUM (FAQ)","faq"]].map(([t,n])=>t+"\n"+T[n].map(row).join("\n")).join("\n\n");
+}
+async function startChat(){
+ if(N8N_CHAT_URL.startsWith("PASTE_"))return console.warn("N8N_CHAT_URL belum diisi");
+ const {createChat}=await import("https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js");
+ createChat({webhookUrl:N8N_CHAT_URL,webhookConfig:{method:"POST",headers:{"ngrok-skip-browser-warning":"true"}},mode:"window",showWelcomeScreen:false,loadPreviousSession:false,metadata:{context:KONTEKS},
+  initialMessages:["Halo, Bapak/Ibu! Saya asisten Sekolah Kristen Tugu Bhakti.","Tanyakan apa saja, misalnya biaya, jadwal pendaftaran, fasilitas, atau kegiatan sekolah."],
+  i18n:{en:{title:"Asisten Tugu Bhakti",subtitle:"Tanya seputar sekolah",footer:"",getStarted:"Mulai",inputPlaceholder:"Tulis pertanyaan Anda..."}}});
+}
+const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const ph=(t,s)=>`<div class="ph"><div class="wrap"><h1 style="font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:.2em">${t}</h1><p>${s}</p></div></div>`;
+const pg=(t,s,b)=>ph(t,s)+`<div class="wrap">${b}</div>`;
+const obelisk=`<svg viewBox="0 0 300 340" role="img" aria-label="Tugu dan matahari terbit"><circle cx="190" cy="120" r="90" fill="#f0b429"/><path d="M150 40l22 40v220h-44V80z" fill="#274690"/><path d="M150 40l22 40h-44z" fill="#9db8ff"/><rect x="95" y="300" width="110" height="14" fill="#274690"/><rect x="75" y="314" width="150" height="14" fill="#1b3270"/></svg>`;
+const R={
+beranda:{t:"Beranda",r:()=>`<div class="hero"><div class="in"><div><h1>Belajar dengan iman, tumbuh dengan karakter.</h1><p>${esc(D.nama)} di bawah ${esc(D.yayasan)}. Kenali sekolah kami dari rumah, lalu datang kalau sudah yakin.</p><a class="btn" href="#ppdb">Lihat info penerimaan</a><a class="btn o" href="#profil">Kenali sekolah</a></div>${obelisk}</div></div>
+<div class="wrap"><div class="two"><div><h2>Sambutan Kepala Sekolah</h2><p>${esc(D.sambutan)}</p><p><b>${esc(D.kepsek)}</b><br><span style="color:var(--mut)">Kepala Sekolah</span></p></div><div><h2>Cari informasi</h2><div class="grid" style="grid-template-columns:1fr 1fr">${[["fasilitas","Fasilitas"],["program","Program pendidikan"],["kegiatan","Kegiatan terbaru"],["prestasi","Prestasi"],["galeri","Galeri"],["kontak","Hubungi kami"]].map(x=>`<a class="it" href="#${x[0]}" style="text-decoration:none;color:var(--ink)"><b>${x[1]}</b></a>`).join("")}</div></div></div></div>`},
+profil:{t:"Profil Sekolah",r:()=>pg("Profil Sekolah","Identitas sekolah",`<div class="grid">${[["Nama sekolah",D.nama],["Yayasan",D.yayasan],["Alamat",D.alamat],["Telepon",D.telp],["Email",D.email],["Jam layanan",D.jam]].map(x=>`<div class="it"><small style="color:var(--mut)">${x[0]}</small><p style="color:var(--ink);font-weight:700">${esc(x[1])}</p></div>`).join("")}</div>`)},
+sejarah:{t:"Sejarah",r:()=>pg("Sejarah Sekolah","Perjalanan sekolah dari awal berdiri",D.sejarah.map(x=>`<div class="row"><b>${esc(x[0])}</b><p>${esc(x[1])}</p></div>`).join(""))},
+visi:{t:"Visi dan Misi",r:()=>pg("Visi dan Misi","Arah dan tujuan sekolah",`<h2>Visi</h2><p style="font-size:1.25rem">${esc(D.visi)}</p><h2 style="margin-top:1.4em">Misi</h2><ol class="m">${D.misi.map(x=>`<li>${esc(x)}</li>`).join("")}</ol>`)},
+struktur:{t:"Struktur Organisasi",r:()=>{const s=D.struktur,n=(a,b)=>`<div class="n"><b>${esc(a)}</b><small>${esc(b)}</small></div>`;return pg("Struktur Organisasi","Siapa yang mengelola sekolah",`<div class="org">${n("Ketua Yayasan",s.ketua)}<div class="l"></div>${n("Kepala Sekolah",s.kepsek)}<div class="l"></div><div class="r">${s.wakil.map(w=>n(w[0],w[1])).join("")}</div><div class="l"></div>${n("Dewan Guru","Guru kelas dan guru mata pelajaran")}</div>`)}},
+fasilitas:{t:"Fasilitas",r:()=>pg("Fasilitas","Sarana dan prasarana sekolah",`<div class="grid">${D.fasilitas.map(x=>`<div class="it"><h3>${esc(x[0])}</h3><p>${esc(x[1])}</p></div>`).join("")}</div>`)},
+program:{t:"Program Pendidikan",r:()=>pg("Program Pendidikan","Apa yang dipelajari dan dikerjakan peserta didik",`<div class="grid">${D.program.map(x=>`<div class="it"><h3>${esc(x[0])}</h3><p>${esc(x[1])}</p></div>`).join("")}</div>`)},
+kegiatan:{t:"Kegiatan",r:()=>pg("Kegiatan Sekolah","Cari kegiatan berdasarkan judul atau isi",`<label for="q">Cari kegiatan</label><input id="q" type="search" placeholder="Contoh: Natal"><div id="kl"></div>`),b:()=>{const f=()=>{const q=$("#q").value.trim().toLowerCase(),a=D.kegiatan.filter(x=>(x[0]+x[1]).toLowerCase().includes(q));$("#kl").innerHTML=a.length?a.map(x=>`<div class="row"><b style="font-size:.95rem">${esc(x[2])}</b><div><h3 style="margin:0 0 .2em">${esc(x[0])}</h3><p>${esc(x[1])}</p></div></div>`).join(""):`<p style="margin-top:16px">Tidak ada kegiatan dengan kata “${esc(q)}”. Coba kata lain.</p>`};$("#q").oninput=f;f()}},
+prestasi:{t:"Prestasi",r:()=>pg("Prestasi","Capaian peserta didik dan sekolah",D.prestasi.map(x=>`<div class="row"><b>${esc(x[0])}</b><div><h3 style="margin:0">${esc(x[1])}</h3><p>${esc(x[2])}</p></div></div>`).join(""))},
+ppdb:{t:"Penerimaan Peserta Didik",r:()=>pg("Penerimaan Peserta Didik Baru","Informasi untuk calon orang tua atau wali murid",`<div class="two"><div><h2>Persyaratan</h2><ol class="m">${D.ppdb.syarat.map(x=>`<li>${esc(x)}</li>`).join("")}</ol><h2>Jadwal</h2><ol class="m" style="list-style:disc">${D.ppdb.jadwal.map(x=>`<li>${esc(x)}</li>`).join("")}</ol><h2>Biaya</h2><ol class="m" style="list-style:disc">${D.ppdb.biaya.map(x=>`<li>${esc(x)}</li>`).join("")}</ol></div><div><h2>Alur pendaftaran</h2><ol class="m">${D.ppdb.alur.map(x=>`<li>${esc(x)}</li>`).join("")}</ol><p style="color:var(--mut)">${esc(D.ppdb.info)}</p><a class="btn" href="#kontak">Tanya ke sekolah</a></div></div>`)},
+galeri:{t:"Galeri",r:()=>pg("Galeri","Suasana belajar dan kegiatan di sekolah",`<div class="gal">${D.galeri.map(x=>`<div style="--c1:${x[1]};--c2:${x[2]}" role="img" aria-label="${esc(x[0])}">${esc(x[0])}</div>`).join("")}</div><p style="margin-top:14px;color:var(--mut)">Foto asli sekolah akan menggantikan kotak warna ini.</p>`)},
+kontak:{t:"Kontak",r:()=>pg("Hubungi Kami","Kirim pertanyaan atau datang ke sekolah",`<div class="two"><div><h2>Alamat sekolah</h2><p>${esc(D.nama)}<br>${esc(D.alamat)}</p><p>Telepon: ${esc(D.telp)}<br>Email: ${esc(D.email)}<br>Jam layanan: ${esc(D.jam)}</p></div><div><h2>Kirim pesan</h2><form id="f" novalidate><label for="n">Nama</label><input id="n" autocomplete="name"><div class="err" id="en"></div><label for="e">Email</label><input id="e" type="email" autocomplete="email"><div class="err" id="ee"></div><label for="p">Pesan</label><textarea id="p" rows="4"></textarea><div class="err" id="ep"></div><button class="btn" type="submit">Kirim pesan</button></form><div id="res"></div></div></div>`),b:()=>{$("#f").onsubmit=ev=>{ev.preventDefault();const n=$("#n").value.trim(),e=$("#e").value.trim(),p=$("#p").value.trim();$("#en").textContent=n?"":"Isi nama Anda.";$("#ee").textContent=/^\S+@\S+\.\S+$/.test(e)?"":"Isi email yang valid, misalnya nama@email.com.";$("#ep").textContent=p?"":"Tulis pesan Anda.";if(!n||!/^\S+@\S+\.\S+$/.test(e)||!p)return;const bt=$("#f button");bt.disabled=true;sb.from("pesan_kontak").insert({nama:n,email:e,pesan:p}).then(({error})=>{bt.disabled=false;$("#res").innerHTML=error?`<div class="err" role="alert">Pesan belum terkirim. Coba lagi sebentar lagi atau hubungi sekolah lewat telepon.</div>`:`<div class="ok" role="status">Terima kasih, pesan Anda sudah terkirim. Pihak sekolah akan menghubungi lewat email.</div>`;if(!error)$("#f").reset()})}}}
+};
+const NAV=[["beranda"],["Tentang",["profil","sejarah","visi","struktur"]],["fasilitas"],["program"],["kegiatan"],["prestasi"],["ppdb"],["galeri"],["kontak"]];
+const lk=k=>`<a href="#${k}" data-k="${k}">${R[k].t}</a>`;
+$("#nl").innerHTML=NAV.map(x=>x[1]?`<li><button class="t" type="button" aria-haspopup="true">${x[0]} ▾</button><ul>${x[1].map(k=>`<li>${lk(k)}</li>`).join("")}</ul></li>`:`<li>${lk(x[0])}</li>`).join("");
+$("#fl").innerHTML=Object.keys(R).map(lk).join("");
+$("#mb").onclick=()=>{const o=$("#nv").classList.toggle("open");$("#mb").setAttribute("aria-expanded",o)};
+function go(){let k=location.hash.slice(1);if(!R[k])k="beranda";$("#m").innerHTML=R[k].r();if(R[k].b)R[k].b();document.title=(k==="beranda"?"":R[k].t+" · ")+D.nama;document.querySelectorAll("#nl a").forEach(a=>a.classList.toggle("on",a.dataset.k===k));$("#nv").classList.remove("open");$("#mb").setAttribute("aria-expanded","false");scrollTo(0,0)}
+addEventListener("hashchange",()=>D&&go());
+(async()=>{$("#m").innerHTML='<div class="wrap"><p>Memuat data sekolah…</p></div>';
+ try{await loadD();go();startChat()}catch(e){console.error(e);$("#m").innerHTML='<div class="wrap"><h2>Data belum bisa dimuat</h2><p>Periksa SUPABASE_URL dan SUPABASE_ANON_KEY di index.html, lalu pastikan file SQL sudah dijalankan di Supabase.</p></div>'}})();
+</script>
+</body>
+</html>
