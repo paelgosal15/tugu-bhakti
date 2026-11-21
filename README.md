@@ -23,8 +23,13 @@
 6. **Unggah** seluruh folder ke Netlify, Vercel, Cloudflare Pages, atau GitHub Pages. Coba lokal: `python3 -m http.server 8000`. Admin ada di `/admin.html`.
 
 ## Memakai dashboard
-- **Isi website**: pilih bagian di kiri, klik *+ Tambah isi*, isi, lalu *Simpan*. Foto bisa diunggah di bagian bertampilan Kartu dan Teks. Atur urutan dengan tombol naik/turun. Bagian baru atau tampilan berbeda bisa dibuat sendiri.
-- **Pengaturan**: nama sekolah, kontak, dan pengaturan asisten AI (bisa dimatikan).
-- **Riwayat tanya AI**: lihat pertanyaan pengunjung.
+Menu di sisi kiri, satu menu untuk satu bagian website. Isi lalu klik **Simpan**.
+- **Profil Sekolah**: nama, jenjang, akreditasi, NPSN, tahun berdiri, deskripsi, foto.
+- **Lokasi**: alamat, petunjuk arah, peta Google Maps (opsional).
+- **Sejarah Singkat**, **Struktur Organisasi**, **Program Pendidikan**, **Fasilitas**, **Kegiatan Sekolah**, **Prestasi**: tambah, ubah, hapus, atur urutan (↑ ↓), dan unggah foto bila ada.
+- **Visi dan Misi**: satu kolom visi dan daftar poin misi.
+- **Penerimaan Peserta Baru**: status, periode, biaya, tautan formulir, dan langkah pendaftaran.
+- **Hubungi Kami**: telepon, WhatsApp, email, jam layanan, media sosial.
+- **Asisten AI** dan **Riwayat Tanya AI**: pengaturan asisten dan pertanyaan pengunjung.
 
-AI menjawab dari isi database terbaru, jadi otomatis ikut berubah setelah admin mengedit. Tiap pertanyaan memakai kuota API Anda; untuk situs ramai, pertimbangkan pembatasan laju.
+Bagian yang kosong otomatis tidak tampil di website. Jika sebelumnya sudah menjalankan `schema.sql` versi lama, jalankan ulang versi ini; data lama tidak hilang.
