@@ -32,10 +32,13 @@ Deno.serve(async (req) => {
     if (s.ai_enabled === "false") return json({ error: "Asisten sedang dinonaktifkan." }, 403);
 
     const lines: string[] = [`Nama sekolah: ${s.school_name}`, s.tagline, s.hero_text];
-    [["Alamat", s.address], ["Telepon", s.phone], ["WhatsApp", s.whatsapp], ["Email", s.email], ["Jam layanan", s.hours]]
+    [["Jenjang", s.jenjang], ["Akreditasi", s.akreditasi], ["NPSN", s.npsn], ["Tahun berdiri", s.tahun_berdiri], ["Profil", s.profil_deskripsi],
+     ["Alamat", s.address], ["Petunjuk arah", s.lokasi_petunjuk], ["Visi", s.visi],
+     ["Status pendaftaran", s.ppdb_status], ["Periode pendaftaran", s.ppdb_periode], ["Biaya", s.ppdb_biaya], ["Tautan pendaftaran", s.ppdb_link], ["Catatan pendaftaran", s.ppdb_catatan],
+     ["Telepon", s.phone], ["WhatsApp", s.whatsapp], ["Email", s.email], ["Jam layanan", s.hours], ["Instagram", s.instagram], ["Facebook", s.facebook], ["YouTube", s.youtube]]
       .forEach(([k, v]) => v && lines.push(`${k}: ${v}`));
     for (const sc of sec.data!) {
-      const rows = it.data!.filter((i: any) => i.section_id === sc.id);
+      const rows = it.data!.filter((i: any) => i.section_id === sc.id && (i.title || i.body));
       if (!rows.length) continue;
       lines.push(`\n## ${sc.title}`, sc.intro);
       rows.forEach((i: any) => lines.push(`- ${[i.title, i.subtitle, i.body].filter(Boolean).join(" | ")}`));
