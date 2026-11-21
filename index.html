@@ -3,31 +3,186 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Sekolah Kristen Tugu Bhakti</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>Sekolah Kristen Tugu Bhakti – Yayasan Pendidikan Kristen Tugu Bhakti</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<style>
+:root{--bg:#f6f8fb;--card:#fff;--ink:#14243a;--muted:#55627a;--line:#d9e0ea;--navy:#16283f;--on-navy:#eef3fa;--brass:#a97c1f;--mist:#e6edf6;--ph:#fff4d6;--ph-ink:#7a5a10;
+ box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1826;--card:#16233a;--ink:#e8eef8;--muted:#9fb0c8;--line:#2a3a55;--navy:#0a111d;--on-navy:#e8eef8;--brass:#d9b45a;--mist:#1a2a44;--ph:#3a2f12;--ph-ink:#f0d48a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1826;--card:#16233a;--ink:#e8eef8;--muted:#9fb0c8;--line:#2a3a55;--navy:#0a111d;--on-navy:#e8eef8;--brass:#d9b45a;--mist:#1a2a44;--ph:#3a2f12;--ph-ink:#f0d48a;color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 "Figtree",system-ui,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--navy);z-index:10}
+h1,h2,h3{font-family:"Young Serif",Georgia,serif;font-weight:400;line-height:1.15;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--brass);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--navy);color:var(--on-navy)}
+header .wrap{display:flex;align-items:center;gap:22px;height:64px}
+.brand{font-family:"Young Serif",Georgia,serif;font-size:1.15rem;text-decoration:none;white-space:nowrap}
+nav{display:flex;gap:18px;overflow-x:auto;scrollbar-width:none;margin-left:auto}
+nav a{text-decoration:none;font-size:.95rem;opacity:.85;white-space:nowrap;padding:6px 0}
+nav a:hover{opacity:1;text-decoration:underline;text-underline-offset:5px}
+.hero{background:var(--navy);color:var(--on-navy);padding:64px 0 72px}
+.hero .wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(2.2rem,5.4vw,3.8rem)}
+.hero p{max-width:46ch;opacity:.9;margin:22px 0 30px}
+.btn{display:inline-block;background:var(--brass);color:#14100a;font-weight:600;padding:13px 24px;border-radius:6px;text-decoration:none}
+.btn.alt{background:transparent;color:inherit;border:1.5px solid currentColor;margin-left:10px}
+.tugu{justify-self:center;width:min(260px,70%);color:var(--brass)}
+section{padding:72px 0}
+section.tint{background:var(--mist)}
+h2{font-size:clamp(1.7rem,3.4vw,2.4rem);margin-bottom:12px}
+.lead{max-width:62ch;color:var(--muted);margin:0 0 34px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.box{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:22px}
+.box h3{font-size:1.2rem;margin-bottom:8px}
+.box p{margin:0;color:var(--muted);font-size:.98rem}
+.isi{background:var(--ph);color:var(--ph-ink);border-radius:4px;padding:0 6px;font-size:.92em;border-bottom:1.5px dashed var(--brass)}
+.two{display:grid;gap:40px;grid-template-columns:1fr 1fr}
+.misi{counter-reset:m;list-style:none;padding:0;margin:0}
+.misi li{counter-increment:m;display:flex;gap:14px;margin-bottom:14px}
+.misi li::before{content:counter(m);flex:none;width:30px;height:30px;border-radius:50%;background:var(--navy);color:var(--on-navy);display:grid;place-items:center;font-size:.9rem;margin-top:2px}
+.visi{font-family:"Young Serif",Georgia,serif;font-size:1.5rem;line-height:1.35}
+.tl{border-left:2px solid var(--brass);margin:0;padding:0 0 0 24px;list-style:none}
+.tl li{margin-bottom:26px;position:relative}
+.tl li::before{content:"";position:absolute;left:-31px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--brass)}
+.tl b{display:block;font-family:"Young Serif",Georgia,serif;font-weight:400;font-size:1.15rem}
+.org{display:flex;flex-direction:column;align-items:center;gap:0}
+.org .row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;position:relative;padding-top:22px}
+.org .row::before{content:"";position:absolute;top:0;left:50%;height:22px;border-left:2px solid var(--line)}
+.org .row:first-child{padding-top:0}.org .row:first-child::before{display:none}
+.node{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px 20px;text-align:center;min-width:170px}
+.node small{display:block;color:var(--muted)}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0;display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.steps li{counter-increment:s;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:22px}
+.steps li::before{content:"Langkah " counter(s);display:block;color:var(--brass);font-weight:600;margin-bottom:6px}
+footer{background:var(--navy);color:var(--on-navy);padding:40px 0;font-size:.95rem}
+footer p{margin:4px 0;opacity:.85}
+@media (max-width:760px){.hero .wrap,.two{grid-template-columns:1fr}.tugu{width:140px;order:-1;justify-self:start}.hero{padding:40px 0 52px}section{padding:52px 0}.btn.alt{margin:10px 0 0}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
 </head>
 <body>
-<header><div class="wrap"><a class="brand" href="#top" id="brand">Tugu Bhakti</a><nav id="nav" aria-label="Menu utama"></nav></div></header>
+<header><div class="wrap">
+<a class="brand" href="#top">Tugu Bhakti</a>
+<nav aria-label="Menu utama"><a href="#profil">Profil</a><a href="#visi">Visi &amp; Misi</a><a href="#struktur">Struktur</a><a href="#program">Program</a><a href="#fasilitas">Fasilitas</a><a href="#kegiatan">Kegiatan</a><a href="#prestasi">Prestasi</a><a href="#ppdb">Penerimaan</a><a href="#kontak">Kontak</a></nav>
+</div></header>
+
 <main id="top">
 <div class="hero"><div class="wrap">
- <div><h1 id="h-name"></h1><p id="h-text"></p><a class="btn" href="#kontak">Hubungi kami</a><button class="btn alt" id="ask-open" type="button">Tanya asisten</button></div>
- <svg class="tugu" viewBox="0 0 120 300" role="img" aria-label="Tugu dengan salib di tengahnya"><path fill="currentColor" fill-rule="evenodd" d="M60 6 L84 60 L92 250 L28 250 L36 60 Z M56 90 h8 v22 h22 v8 h-22 v58 h-8 v-58 h-22 v-8 h22 Z"/><rect x="14" y="250" width="92" height="14" fill="currentColor"/><rect x="4" y="264" width="112" height="16" fill="currentColor"/></svg>
-</div></div>
-<div id="content"><section><div class="wrap"><p class="lead">Memuat…</p></div></section></div>
-<section id="kontak" class="tint" hidden><div class="wrap"><h2>Hubungi kami</h2><div class="grid" id="contact"></div></div></section>
-</main>
-<footer><div class="wrap"><p id="f-name"></p><p id="f-tag"></p></div></footer>
-
-<button class="fab" id="fab" type="button" aria-label="Buka asisten tanya jawab">Tanya</button>
-<div class="chat" id="chat" role="dialog" aria-label="Asisten tanya jawab" hidden>
- <div class="chat-h"><strong id="ai-name">Asisten</strong><button type="button" id="chat-x" aria-label="Tutup">✕</button></div>
- <div class="chat-b" id="msgs" aria-live="polite"></div>
- <div class="chat-s" id="sugs"></div>
- <form class="chat-f" id="chat-form"><input id="q" maxlength="800" placeholder="Tulis pertanyaan…" autocomplete="off" aria-label="Pertanyaan"><button class="btn" type="submit">Kirim</button></form>
+<div>
+<h1>Sekolah Kristen Tugu Bhakti</h1>
+<p>Sekolah di bawah naungan Yayasan Pendidikan Kristen Tugu Bhakti. Di sini orang tua dan calon murid bisa mengenal sekolah kami lebih dekat: dari sejarah, program belajar, sampai cara mendaftar.</p>
+<a class="btn" href="#ppdb">Info penerimaan murid baru</a><a class="btn alt" href="#profil">Kenali sekolah kami</a>
 </div>
-<script src="js/config.js"></script>
-<script type="module" src="js/app.js"></script>
+<svg class="tugu" viewBox="0 0 120 300" role="img" aria-label="Tugu dengan salib di tengahnya"><path fill="currentColor" fill-rule="evenodd" d="M60 6 L84 60 L92 250 L28 250 L36 60 Z M56 90 h8 v22 h22 v8 h-22 v58 h-8 v-58 h-22 v-8 h22 Z"/><rect x="14" y="250" width="92" height="14" fill="currentColor"/><rect x="4" y="264" width="112" height="16" fill="currentColor"/></svg>
+</div></div>
+
+<section id="profil"><div class="wrap">
+<h2>Mengenal sekolah kami</h2>
+<p class="lead">Tugu Bhakti adalah lembaga pendidikan Kristen. Sekolah ini ingin jadi tempat anak belajar dengan nyaman, dan tempat orang tua mendapat informasi yang jelas tanpa harus datang langsung.</p>
+<div class="grid">
+<div class="box"><h3>Identitas</h3><p>Nama resmi: <span class="isi">isi nama lengkap sekolah</span><br>Jenjang: <span class="isi">isi jenjang</span><br>Akreditasi: <span class="isi">isi akreditasi</span></p></div>
+<div class="box"><h3>Naungan</h3><p>Yayasan Pendidikan Kristen Tugu Bhakti. Informasi yayasan secara umum tersedia di situs yayasan pusat.</p></div>
+<div class="box"><h3>Lokasi</h3><p><span class="isi">isi alamat lengkap sekolah</span></p></div>
+</div>
+<h2 style="margin-top:56px">Sejarah singkat</h2>
+<p class="lead">Ceritakan awal berdirinya sekolah dan perjalanannya sampai sekarang.</p>
+<ul class="tl">
+<li><b><span class="isi">tahun</span></b>Awal berdirinya sekolah dan siapa yang memulainya. <span class="isi">isi cerita</span></li>
+<li><b><span class="isi">tahun</span></b>Perkembangan penting, misalnya penambahan jenjang atau gedung. <span class="isi">isi cerita</span></li>
+<li><b>Sekarang</b>Kondisi sekolah saat ini. <span class="isi">isi cerita</span></li>
+</ul>
+</div></section>
+
+<section id="visi" class="tint"><div class="wrap two">
+<div><h2>Visi</h2><p class="visi"><span class="isi">isi visi sekolah</span></p></div>
+<div><h2>Misi</h2><ol class="misi"><li><span class="isi">isi misi pertama</span></li><li><span class="isi">isi misi kedua</span></li><li><span class="isi">isi misi ketiga</span></li></ol></div>
+</div></section>
+
+<section id="struktur"><div class="wrap">
+<h2>Struktur organisasi</h2>
+<p class="lead">Siapa yang mengurus sekolah, dari yayasan sampai guru.</p>
+<div class="org">
+<div class="row"><div class="node">Pengurus Yayasan<small class="isi">isi nama</small></div></div>
+<div class="row"><div class="node">Kepala Sekolah<small class="isi">isi nama</small></div></div>
+<div class="row"><div class="node">Wakil Kepala Sekolah<small class="isi">isi nama</small></div><div class="node">Tata Usaha<small class="isi">isi nama</small></div></div>
+<div class="row"><div class="node">Guru Kelas / Mata Pelajaran<small class="isi">isi jumlah guru</small></div></div>
+</div>
+</div></section>
+
+<section id="program" class="tint"><div class="wrap">
+<h2>Program pendidikan</h2>
+<p class="lead">Jenjang dan program yang tersedia untuk murid.</p>
+<div class="grid">
+<div class="box"><h3><span class="isi">nama jenjang</span></h3><p>Gambaran singkat kurikulum dan jam belajar. <span class="isi">isi</span></p></div>
+<div class="box"><h3>Pembinaan karakter dan iman</h3><p>Kegiatan rohani yang menjadi bagian dari keseharian sekolah. <span class="isi">isi</span></p></div>
+<div class="box"><h3>Program unggulan</h3><p><span class="isi">isi program khusus, misalnya bahasa atau teknologi</span></p></div>
+</div>
+</div></section>
+
+<section id="fasilitas"><div class="wrap">
+<h2>Fasilitas</h2>
+<p class="lead">Ruang dan sarana yang dipakai murid setiap hari.</p>
+<div class="grid">
+<div class="box"><h3>Ruang kelas</h3><p><span class="isi">isi jumlah dan kondisi</span></p></div>
+<div class="box"><h3>Perpustakaan</h3><p><span class="isi">isi</span></p></div>
+<div class="box"><h3>Laboratorium</h3><p><span class="isi">isi</span></p></div>
+<div class="box"><h3>Tempat ibadah</h3><p><span class="isi">isi</span></p></div>
+<div class="box"><h3>Lapangan dan olahraga</h3><p><span class="isi">isi</span></p></div>
+</div>
+</div></section>
+
+<section id="kegiatan" class="tint"><div class="wrap">
+<h2>Kegiatan sekolah</h2>
+<p class="lead">Kegiatan di dalam dan di luar kelas.</p>
+<div class="grid">
+<div class="box"><h3>Kegiatan rutin</h3><p><span class="isi">isi, misalnya ibadah pagi</span></p></div>
+<div class="box"><h3>Ekstrakurikuler</h3><p><span class="isi">isi daftar ekskul</span></p></div>
+<div class="box"><h3>Acara tahunan</h3><p><span class="isi">isi, misalnya perayaan Natal</span></p></div>
+</div>
+</div></section>
+
+<section id="prestasi"><div class="wrap">
+<h2>Prestasi</h2>
+<p class="lead">Capaian murid dan sekolah.</p>
+<div class="grid">
+<div class="box"><h3><span class="isi">nama lomba</span></h3><p><span class="isi">isi juara, tahun, dan nama murid</span></p></div>
+<div class="box"><h3><span class="isi">nama lomba</span></h3><p><span class="isi">isi juara, tahun, dan nama murid</span></p></div>
+</div>
+</div></section>
+
+<section id="ppdb" class="tint"><div class="wrap">
+<h2>Penerimaan peserta didik baru</h2>
+<p class="lead">Alur pendaftaran supaya orang tua tahu apa yang perlu disiapkan. Sesuaikan dengan aturan sekolah.</p>
+<ol class="steps">
+<li>Isi formulir pendaftaran. <span class="isi">isi cara</span></li>
+<li>Siapkan berkas yang diminta. <span class="isi">isi daftar berkas</span></li>
+<li>Ikuti seleksi atau wawancara. <span class="isi">isi jadwal</span></li>
+<li>Lihat pengumuman dan daftar ulang. <span class="isi">isi tanggal</span></li>
+</ol>
+<p style="margin-top:22px;color:var(--muted)">Biaya pendidikan: <span class="isi">isi atau arahkan ke kontak</span></p>
+</div></section>
+
+<section id="kontak"><div class="wrap">
+<h2>Hubungi kami</h2>
+<p class="lead">Ada pertanyaan soal sekolah? Hubungi kami lewat kontak di bawah.</p>
+<div class="grid">
+<div class="box"><h3>Alamat</h3><p><span class="isi">isi alamat</span></p></div>
+<div class="box"><h3>Telepon / WhatsApp</h3><p><span class="isi">isi nomor</span></p></div>
+<div class="box"><h3>Email</h3><p><span class="isi">isi email</span></p></div>
+<div class="box"><h3>Jam layanan</h3><p><span class="isi">isi jam</span></p></div>
+</div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+<p>Sekolah Kristen Tugu Bhakti</p>
+<p>Di bawah naungan Yayasan Pendidikan Kristen Tugu Bhakti</p>
+</div></footer>
 </body>
 </html>
