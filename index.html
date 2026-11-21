@@ -1,123 +1,33 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Sekolah Kristen Tugu Bhakti</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;700&family=Young+Serif&display=swap">
-<style>
-:root{--bg:#f4f6fb;--surf:#fff;--ink:#14213d;--mut:#55607a;--pri:#274690;--btn:#274690;--btnt:#fff;--sun:#f0b429;--line:#d9dfee;--soft:#e8edf8;--hero:#14213d;--herot:#f4f6fb;
-box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1427;--surf:#141d36;--ink:#eef1fa;--mut:#a3accb;--pri:#9db8ff;--btn:#f0b429;--btnt:#14213d;--line:#27335a;--soft:#18233f;--hero:#0a1020;--herot:#eef1fa}}
-:root[data-theme="dark"]{--bg:#0d1427;--surf:#141d36;--ink:#eef1fa;--mut:#a3accb;--pri:#9db8ff;--btn:#f0b429;--btnt:#14213d;--line:#27335a;--soft:#18233f;--hero:#0a1020;--herot:#eef1fa}
-*{box-sizing:border-box}
-html{scroll-padding-top:env(safe-area-inset-top,0px)}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.7 Figtree,system-ui,sans-serif}
-h1,h2,h3{font-family:"Young Serif",Georgia,serif;font-weight:400;line-height:1.2;margin:0 0 .6em}
-h1{font-size:clamp(2.2rem,6vw,3.8rem)}h2{font-size:1.7rem}h3{font-size:1.2rem}
-p{margin:0 0 1em;max-width:68ch}
-a{color:var(--pri)}
-:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--surf);border-bottom:1px solid var(--line)}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--surf);z-index:30}
-.bar{max-width:1100px;margin:auto;display:flex;align-items:center;gap:12px;padding:10px 20px}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font:700 1rem/1.2 Figtree,sans-serif;margin-right:auto}
-.logo svg{width:34px;height:34px}
-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:2px}
-nav li{position:relative}
-nav a,nav button.t{display:block;padding:8px 10px;border-radius:8px;text-decoration:none;color:var(--ink);font:500 .92rem Figtree,sans-serif;background:none;border:0;cursor:pointer}
-nav a:hover,nav button.t:hover,nav a.on{background:var(--soft)}
-nav a.on{color:var(--pri);font-weight:700}
-nav ul ul{display:none;position:absolute;top:100%;left:0;min-width:170px;background:var(--surf);border:1px solid var(--line);border-radius:10px;padding:6px;flex-direction:column}
-nav li:hover>ul,nav li:focus-within>ul{display:flex}
-#mb{display:none;background:none;border:1px solid var(--line);border-radius:8px;padding:6px 12px;color:var(--ink);font:inherit;cursor:pointer}
-@media(max-width:900px){#mb{display:block}nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--surf);border-bottom:1px solid var(--line);padding:8px 16px 14px}nav.open{display:block}nav ul{flex-direction:column}nav ul ul{display:flex;position:static;border:0;padding:0 0 0 14px}}
-.hero{background:var(--hero);color:var(--herot)}
-.hero .in{max-width:1100px;margin:auto;padding:56px 20px;display:grid;grid-template-columns:1.3fr 1fr;gap:30px;align-items:center}
-.hero p{color:inherit;opacity:.85;font-size:1.15rem}
-.hero svg{width:100%;max-height:340px}
-@media(max-width:760px){.hero .in{grid-template-columns:1fr}.hero svg{max-height:200px}}
-.btn{display:inline-block;background:var(--btn);color:var(--btnt);padding:12px 22px;border-radius:999px;font-weight:700;text-decoration:none;border:0;cursor:pointer;font-family:inherit;font-size:1rem;margin:0 8px 8px 0}
-.btn.o{background:none;color:inherit;border:2px solid currentColor}
-.wrap{max-width:1100px;margin:auto;padding:44px 20px}
-.ph{background:var(--soft);border-bottom:1px solid var(--line)}.ph .wrap{padding:36px 20px}.ph p{margin:0;color:var(--mut)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:26px}
-.it{border-left:4px solid var(--sun);padding:2px 0 2px 16px}.it p{margin:0;color:var(--mut)}
-.row{display:grid;grid-template-columns:90px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
-.row b{font-family:"Young Serif",Georgia,serif;color:var(--pri);font-weight:400;font-size:1.1rem}
-.row p{margin:0}.row small{color:var(--mut)}
-ol.m{padding-left:1.2em}ol.m li{margin-bottom:.6em;max-width:68ch}
-.org{display:flex;flex-direction:column;align-items:center;gap:0;text-align:center}
-.org .n{background:var(--surf);border:2px solid var(--pri);border-radius:10px;padding:10px 18px;min-width:210px}
-.org .n small{display:block;color:var(--mut)}
-.org .l{width:2px;height:22px;background:var(--pri)}
-.org .r{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
-.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
-.gal div{aspect-ratio:4/3;border-radius:10px;display:flex;align-items:flex-end;padding:12px;color:#fff;font-weight:700;background:linear-gradient(150deg,var(--c1),var(--c2))}
-input,textarea{width:100%;font:inherit;padding:11px 13px;border:1px solid var(--line);border-radius:10px;background:var(--surf);color:var(--ink);margin-bottom:6px}
-label{font-weight:700;display:block;margin-top:10px}
-.err{color:#c0392b;font-size:.9rem;min-height:1.2em;margin-bottom:4px}
-@media(prefers-color-scheme:dark){.err{color:#ff8f80}}
-.ok{background:var(--soft);border-left:4px solid var(--pri);padding:12px 16px;border-radius:6px;margin-top:14px}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:40px}@media(max-width:760px){.two{grid-template-columns:1fr}}
-footer{background:var(--hero);color:var(--herot);margin-top:30px}
-footer .wrap{padding:30px 20px;font-size:.95rem}footer a{color:inherit;margin-right:14px}footer p{opacity:.8}
-@media(prefers-reduced-motion:no-preference){main{animation:f .25s ease}@keyframes f{from{opacity:.4}to{opacity:1}}}
-</style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header><div class="bar">
-<a class="logo" href="#beranda"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="#f0b429"/><path d="M20 5l4 7v21h-8V12z" fill="#14213d"/></svg><span>Tugu Bhakti<br><small style="font-weight:400;opacity:.7">Yayasan Pendidikan Kristen</small></span></a>
-<button id="mb" aria-expanded="false" aria-controls="nv">Menu</button>
-<nav id="nv" aria-label="Menu utama"><ul id="nl"></ul></nav>
-</div></header>
-<main id="m"></main>
-<footer><div class="wrap"><div id="fl"></div><p>© 2026 Yayasan Pendidikan Kristen Tugu Bhakti. Data pada situs ini masih contoh dan perlu diganti dengan data resmi sekolah.</p></div></footer>
-<script>
-// ====== DATA SEKOLAH — ganti isi di bawah ini dengan data resmi ======
-const D={
- nama:"Sekolah Kristen Tugu Bhakti",yayasan:"Yayasan Pendidikan Kristen Tugu Bhakti",
- alamat:"Jl. Tugu Raya No. 12, Koja, Jakarta Utara 14260",telp:"(021) 555-0123",email:"info@tugubhakti.sch.id",jam:"Senin–Jumat, 07.00–15.00",
- sambutan:"Selamat datang di situs Sekolah Kristen Tugu Bhakti. Kami ingin Bapak/Ibu mengenal sekolah kami lebih dulu, mulai dari sejarah, visi dan misi, fasilitas, sampai kegiatan sehari-hari anak-anak, sebelum memutuskan datang langsung. Kami percaya pendidikan yang baik tumbuh dari kasih, disiplin, dan kerja sama antara sekolah dan keluarga.",
- kepsek:"Ibu Margaretha Simanjuntak, S.Pd.",
- sejarah:[["1985","Yayasan Pendidikan Kristen Tugu Bhakti berdiri dengan tujuan menyediakan pendidikan yang berlandaskan iman Kristen bagi anak-anak di lingkungan sekitar."],["1987","Sekolah mulai menerima peserta didik angkatan pertama dengan dua ruang kelas."],["2005","Sekolah membangun gedung baru yang memuat perpustakaan dan ruang ibadah."],["2015","Sekolah membuka laboratorium komputer dan memperbarui lapangan olahraga."],["Sekarang","Sekolah terus mengembangkan program pembelajaran dan kegiatan peserta didik."]],
- visi:"Menjadi sekolah yang membentuk peserta didik beriman, berkarakter, cerdas, dan melayani sesama.",
- misi:["Menanamkan nilai iman Kristen dalam kehidupan sekolah sehari-hari.","Menyelenggarakan pembelajaran yang bermutu dan sesuai kebutuhan peserta didik.","Membangun karakter jujur, disiplin, dan bertanggung jawab.","Mengembangkan minat dan bakat melalui kegiatan di luar kelas.","Bekerja sama dengan orang tua dan masyarakat."],
- struktur:{ketua:"Bapak Daniel Hutapea, M.Th.",kepsek:"Ibu Margaretha Simanjuntak, S.Pd.",wakil:[["Wakil Kepala Sekolah Bidang Kurikulum","Bapak Yohanes Sitorus, S.Pd."],["Wakil Kepala Sekolah Bidang Kesiswaan","Ibu Ruth Manurung, S.Pd."],["Kepala Tata Usaha","Ibu Esther Tampubolon, S.E."]]},
- fasilitas:[["Ruang kelas","Ruang belajar yang tertata untuk kegiatan belajar mengajar."],["Perpustakaan","Koleksi buku bacaan dan buku pelajaran untuk peserta didik dan guru."],["Laboratorium komputer","Tempat belajar teknologi informasi."],["Ruang ibadah","Tempat kebaktian dan kegiatan rohani sekolah."],["Lapangan olahraga","Area untuk pelajaran olahraga dan upacara."],["Unit kesehatan sekolah","Pertolongan pertama bagi peserta didik yang kurang sehat."]],
- program:[["Pembelajaran kelas","Kurikulum yang berlaku, disampaikan oleh guru dengan metode yang disesuaikan jenjang."],["Pendidikan agama Kristen","Pelajaran agama, ibadah bersama, dan pembinaan rohani."],["Pembentukan karakter","Pembiasaan disiplin, kejujuran, dan kepedulian di lingkungan sekolah."],["Ekstrakurikuler","Pilihan kegiatan sesuai minat, misalnya musik, olahraga, dan pramuka."]],
- kegiatan:[["Ibadah pembukaan tahun ajaran","Seluruh warga sekolah berdoa bersama untuk memulai tahun ajaran baru.","Juli 2026"],["Perayaan Natal sekolah","Pentas drama dan paduan suara peserta didik bersama orang tua.","Desember 2026"],["Pekan olahraga sekolah","Lomba antarkelas untuk melatih sportivitas.","Oktober 2026"],["Kunjungan belajar","Peserta didik belajar langsung di luar sekolah.","September 2026"],["Pertemuan orang tua dan guru","Penyampaian perkembangan belajar dan diskusi dengan wali kelas.","Agustus 2026"],["Retret rohani kelas 6","Dua hari kegiatan renungan dan kebersamaan sebelum ujian akhir.","November 2026"],["Bakti sosial","Peserta didik dan guru membagikan paket sembako kepada warga sekitar.","Mei 2026"]],
- prestasi:[["2026","Juara 1 Lomba Paduan Suara Antarsekolah Kristen","Tingkat kota, diraih tim paduan suara kelas 4–6"],["2026","Juara 2 Olimpiade Matematika","Tingkat kecamatan, diraih Samuel Pangaribuan (kelas 6)"],["2025","Juara 3 Lomba Menggambar","Tingkat kota, diraih Grace Nainggolan (kelas 3)"],["2025","Juara 1 Futsal Antarsekolah","Tingkat kecamatan, tim putra kelas 5–6"],["2024","Juara Harapan 1 Lomba Pidato Bahasa Inggris","Tingkat kota, diraih Jonathan Silalahi (kelas 6)"]],
- ppdb:{syarat:["Mengisi formulir pendaftaran di sekolah","Fotokopi akta kelahiran dan kartu keluarga","Pas foto terbaru","Rapor atau surat keterangan dari sekolah asal (jika ada)"],alur:["Hubungi sekolah atau datang langsung untuk mendapat informasi","Lengkapi berkas pendaftaran di sekolah","Ikuti tes atau wawancara sesuai jadwal","Terima pengumuman dan lakukan daftar ulang"],jadwal:"Gelombang 1: 1 Desember 2026 – 28 Februari 2027. Gelombang 2: 1 Maret – 31 Mei 2027. Tahun ajaran baru dimulai Juli 2027.",biaya:"Uang pangkal Rp5.000.000 dan uang sekolah Rp750.000 per bulan (angka contoh). Hubungi tata usaha untuk rincian dan keringanan."},
- galeri:[["Ibadah pagi","#274690","#14213d"],["Kelas","#2f7d5b","#14213d"],["Perpustakaan","#a14a76","#274690"],["Olahraga","#d9782d","#8a2f2f"],["Pentas Natal","#8a2f2f","#274690"],["Upacara","#14213d","#2f7d5b"]]
-};
-// =====================================================================
-const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const ph=(t,s)=>`<div class="ph"><div class="wrap"><h1 style="font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:.2em">${t}</h1><p>${s}</p></div></div>`;
-const pg=(t,s,b)=>ph(t,s)+`<div class="wrap">${b}</div>`;
-const obelisk=`<svg viewBox="0 0 300 340" role="img" aria-label="Tugu dan matahari terbit"><circle cx="190" cy="120" r="90" fill="#f0b429"/><path d="M150 40l22 40v220h-44V80z" fill="#274690"/><path d="M150 40l22 40h-44z" fill="#9db8ff"/><rect x="95" y="300" width="110" height="14" fill="#274690"/><rect x="75" y="314" width="150" height="14" fill="#1b3270"/></svg>`;
-const R={
-beranda:{t:"Beranda",r:()=>`<div class="hero"><div class="in"><div><h1>Belajar dengan iman, tumbuh dengan karakter.</h1><p>${esc(D.nama)} di bawah ${esc(D.yayasan)}. Kenali sekolah kami dari rumah, lalu datang kalau sudah yakin.</p><a class="btn" href="#ppdb">Lihat info penerimaan</a><a class="btn o" href="#profil">Kenali sekolah</a></div>${obelisk}</div></div>
-<div class="wrap"><div class="two"><div><h2>Sambutan Kepala Sekolah</h2><p>${esc(D.sambutan)}</p><p><b>${esc(D.kepsek)}</b><br><span style="color:var(--mut)">Kepala Sekolah</span></p></div><div><h2>Cari informasi</h2><div class="grid" style="grid-template-columns:1fr 1fr">${[["fasilitas","Fasilitas"],["program","Program pendidikan"],["kegiatan","Kegiatan terbaru"],["prestasi","Prestasi"],["galeri","Galeri"],["kontak","Hubungi kami"]].map(x=>`<a class="it" href="#${x[0]}" style="text-decoration:none;color:var(--ink)"><b>${x[1]}</b></a>`).join("")}</div></div></div></div>`},
-profil:{t:"Profil Sekolah",r:()=>pg("Profil Sekolah","Identitas sekolah",`<div class="grid">${[["Nama sekolah",D.nama],["Yayasan",D.yayasan],["Alamat",D.alamat],["Telepon",D.telp],["Email",D.email],["Jam layanan",D.jam]].map(x=>`<div class="it"><small style="color:var(--mut)">${x[0]}</small><p style="color:var(--ink);font-weight:700">${esc(x[1])}</p></div>`).join("")}</div>`)},
-sejarah:{t:"Sejarah",r:()=>pg("Sejarah Sekolah","Perjalanan sekolah dari awal berdiri",D.sejarah.map(x=>`<div class="row"><b>${esc(x[0])}</b><p>${esc(x[1])}</p></div>`).join(""))},
-visi:{t:"Visi dan Misi",r:()=>pg("Visi dan Misi","Arah dan tujuan sekolah",`<h2>Visi</h2><p style="font-size:1.25rem">${esc(D.visi)}</p><h2 style="margin-top:1.4em">Misi</h2><ol class="m">${D.misi.map(x=>`<li>${esc(x)}</li>`).join("")}</ol>`)},
-struktur:{t:"Struktur Organisasi",r:()=>{const s=D.struktur,n=(a,b)=>`<div class="n"><b>${esc(a)}</b><small>${esc(b)}</small></div>`;return pg("Struktur Organisasi","Siapa yang mengelola sekolah",`<div class="org">${n("Ketua Yayasan",s.ketua)}<div class="l"></div>${n("Kepala Sekolah",s.kepsek)}<div class="l"></div><div class="r">${s.wakil.map(w=>n(w[0],w[1])).join("")}</div><div class="l"></div>${n("Dewan Guru","Guru kelas dan guru mata pelajaran")}</div>`)}},
-fasilitas:{t:"Fasilitas",r:()=>pg("Fasilitas","Sarana dan prasarana sekolah",`<div class="grid">${D.fasilitas.map(x=>`<div class="it"><h3>${esc(x[0])}</h3><p>${esc(x[1])}</p></div>`).join("")}</div>`)},
-program:{t:"Program Pendidikan",r:()=>pg("Program Pendidikan","Apa yang dipelajari dan dikerjakan peserta didik",`<div class="grid">${D.program.map(x=>`<div class="it"><h3>${esc(x[0])}</h3><p>${esc(x[1])}</p></div>`).join("")}</div>`)},
-kegiatan:{t:"Kegiatan",r:()=>pg("Kegiatan Sekolah","Cari kegiatan berdasarkan judul atau isi",`<label for="q">Cari kegiatan</label><input id="q" type="search" placeholder="Contoh: Natal"><div id="kl"></div>`),b:()=>{const f=()=>{const q=$("#q").value.trim().toLowerCase(),a=D.kegiatan.filter(x=>(x[0]+x[1]).toLowerCase().includes(q));$("#kl").innerHTML=a.length?a.map(x=>`<div class="row"><b style="font-size:.95rem">${esc(x[2])}</b><div><h3 style="margin:0 0 .2em">${esc(x[0])}</h3><p>${esc(x[1])}</p></div></div>`).join(""):`<p style="margin-top:16px">Tidak ada kegiatan dengan kata “${esc(q)}”. Coba kata lain.</p>`};$("#q").oninput=f;f()}},
-prestasi:{t:"Prestasi",r:()=>pg("Prestasi","Capaian peserta didik dan sekolah",D.prestasi.map(x=>`<div class="row"><b>${esc(x[0])}</b><div><h3 style="margin:0">${esc(x[1])}</h3><p>${esc(x[2])}</p></div></div>`).join(""))},
-ppdb:{t:"Penerimaan Peserta Didik",r:()=>pg("Penerimaan Peserta Didik Baru","Informasi untuk calon orang tua atau wali murid",`<div class="two"><div><h2>Persyaratan</h2><ol class="m">${D.ppdb.syarat.map(x=>`<li>${esc(x)}</li>`).join("")}</ol><h2>Jadwal</h2><p>${esc(D.ppdb.jadwal)}</p><h2>Biaya</h2><p>${esc(D.ppdb.biaya)}</p></div><div><h2>Alur pendaftaran</h2><ol class="m">${D.ppdb.alur.map(x=>`<li>${esc(x)}</li>`).join("")}</ol><p style="color:var(--mut)">Pendaftaran dilakukan langsung di sekolah. Situs ini hanya memberi informasi.</p><a class="btn" href="#kontak">Tanya ke sekolah</a></div></div>`)},
-galeri:{t:"Galeri",r:()=>pg("Galeri","Suasana belajar dan kegiatan di sekolah",`<div class="gal">${D.galeri.map(x=>`<div style="--c1:${x[1]};--c2:${x[2]}" role="img" aria-label="${esc(x[0])}">${esc(x[0])}</div>`).join("")}</div><p style="margin-top:14px;color:var(--mut)">Foto asli sekolah akan menggantikan kotak warna ini.</p>`)},
-kontak:{t:"Kontak",r:()=>pg("Hubungi Kami","Kirim pertanyaan atau datang ke sekolah",`<div class="two"><div><h2>Alamat sekolah</h2><p>${esc(D.nama)}<br>${esc(D.alamat)}</p><p>Telepon: ${esc(D.telp)}<br>Email: ${esc(D.email)}<br>Jam layanan: ${esc(D.jam)}</p></div><div><h2>Kirim pesan</h2><form id="f" novalidate><label for="n">Nama</label><input id="n" autocomplete="name"><div class="err" id="en"></div><label for="e">Email</label><input id="e" type="email" autocomplete="email"><div class="err" id="ee"></div><label for="p">Pesan</label><textarea id="p" rows="4"></textarea><div class="err" id="ep"></div><button class="btn" type="submit">Kirim pesan</button></form><div id="res"></div></div></div>`),b:()=>{$("#f").onsubmit=ev=>{ev.preventDefault();const n=$("#n").value.trim(),e=$("#e").value.trim(),p=$("#p").value.trim();$("#en").textContent=n?"":"Isi nama Anda.";$("#ee").textContent=/^\S+@\S+\.\S+$/.test(e)?"":"Isi email yang valid, misalnya nama@email.com.";$("#ep").textContent=p?"":"Tulis pesan Anda.";if(!n||!/^\S+@\S+\.\S+$/.test(e)||!p)return;$("#res").innerHTML=`<div class="ok" role="status">Pesan siap dikirim. Aplikasi email Anda akan terbuka; tekan kirim di sana untuk menyelesaikan.</div>`;location.href=`mailto:${D.email}?subject=${encodeURIComponent("Pertanyaan dari "+n)}&body=${encodeURIComponent(p+"\n\n"+n+" ("+e+")")}`}}}
-};
-const NAV=[["beranda"],["Tentang",["profil","sejarah","visi","struktur"]],["fasilitas"],["program"],["kegiatan"],["prestasi"],["ppdb"],["galeri"],["kontak"]];
-const lk=k=>`<a href="#${k}" data-k="${k}">${R[k].t}</a>`;
-$("#nl").innerHTML=NAV.map(x=>x[1]?`<li><button class="t" type="button" aria-haspopup="true">${x[0]} ▾</button><ul>${x[1].map(k=>`<li>${lk(k)}</li>`).join("")}</ul></li>`:`<li>${lk(x[0])}</li>`).join("");
-$("#fl").innerHTML=Object.keys(R).map(lk).join("");
-$("#mb").onclick=()=>{const o=$("#nv").classList.toggle("open");$("#mb").setAttribute("aria-expanded",o)};
-function go(){let k=location.hash.slice(1);if(!R[k])k="beranda";$("#m").innerHTML=R[k].r();if(R[k].b)R[k].b();document.title=(k==="beranda"?"":R[k].t+" · ")+D.nama;document.querySelectorAll("#nl a").forEach(a=>a.classList.toggle("on",a.dataset.k===k));$("#nv").classList.remove("open");$("#mb").setAttribute("aria-expanded","false");scrollTo(0,0)}
-addEventListener("hashchange",go);go();
-</script>
+<header><div class="wrap"><a class="brand" href="#top" id="brand">Tugu Bhakti</a><nav id="nav" aria-label="Menu utama"></nav></div></header>
+<main id="top">
+<div class="hero"><div class="wrap">
+ <div><h1 id="h-name"></h1><p id="h-text"></p><a class="btn" href="#kontak">Hubungi kami</a><button class="btn alt" id="ask-open" type="button">Tanya asisten</button></div>
+ <svg class="tugu" viewBox="0 0 120 300" role="img" aria-label="Tugu dengan salib di tengahnya"><path fill="currentColor" fill-rule="evenodd" d="M60 6 L84 60 L92 250 L28 250 L36 60 Z M56 90 h8 v22 h22 v8 h-22 v58 h-8 v-58 h-22 v-8 h22 Z"/><rect x="14" y="250" width="92" height="14" fill="currentColor"/><rect x="4" y="264" width="112" height="16" fill="currentColor"/></svg>
+</div></div>
+<div id="content"><section><div class="wrap"><p class="lead">Memuat…</p></div></section></div>
+<section id="kontak" class="tint" hidden><div class="wrap"><h2>Hubungi kami</h2><div class="grid" id="contact"></div></div></section>
+</main>
+<footer><div class="wrap"><p id="f-name"></p><p id="f-tag"></p></div></footer>
+
+<button class="fab" id="fab" type="button" aria-label="Buka asisten tanya jawab">Tanya</button>
+<div class="chat" id="chat" role="dialog" aria-label="Asisten tanya jawab" hidden>
+ <div class="chat-h"><strong id="ai-name">Asisten</strong><button type="button" id="chat-x" aria-label="Tutup">✕</button></div>
+ <div class="chat-b" id="msgs" aria-live="polite"></div>
+ <div class="chat-s" id="sugs"></div>
+ <form class="chat-f" id="chat-form"><input id="q" maxlength="800" placeholder="Tulis pertanyaan…" autocomplete="off" aria-label="Pertanyaan"><button class="btn" type="submit">Kirim</button></form>
+</div>
+<script src="js/config.js"></script>
+<script type="module" src="js/app.js"></script>
 </body>
 </html>
